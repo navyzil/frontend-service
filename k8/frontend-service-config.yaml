@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+data:
+  SERVER_PORT: "8886"
+  FRONTEND_BACKEND_API_REST_URL: http://10.1.0.26:8885/backend-api
+metadata:
+  creationTimestamp: null
+  name: frontend-service-config

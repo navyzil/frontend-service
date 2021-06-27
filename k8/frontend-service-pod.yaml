@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: frontend-service
+  name: frontend-service
+spec:
+  containers:
+    - image: frontend-service:latest
+      name: frontend-service
+      ports:
+        - containerPort: 8886
+      imagePullPolicy: IfNotPresent
+      env:
+        - name: SERVER_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-service-config
+              key: SERVER_PORT
+        - name: FRONTEND_BACKEND_API_REST_URL
+          valueFrom:
+            configMapKeyRef:
+              name: frontend-service-config
+              key: FRONTEND_BACKEND_API_REST_URL
+  restartPolicy: Never
