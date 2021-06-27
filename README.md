@@ -58,5 +58,6 @@ From here, once you execute localhost:<port_number>/frontend-service on your bro
 
         kubectl delete pods frontend-service --force
 This will stop and remove the outdated pod.
+
 2. Follow the steps in Part II.
     
